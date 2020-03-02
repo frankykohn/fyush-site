@@ -1,0 +1,4 @@
+App
+  - Home
+  - Visuals
+  - Music
