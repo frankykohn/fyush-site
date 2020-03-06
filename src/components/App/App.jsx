@@ -16,6 +16,7 @@ import VisualsPage from '../VisualsPage/VisualsPage';
 import ContactPage from '../ContactPage/ContactPage';
 import ProjectsPage from '../ProjectsPage/ProjectsPage';
 import Navigation from '../Navigation/Navigation';
+import SocialLinks from '../SocialLinks/SocialLinks';
 
 import * as ROUTES from '../../constants/routes';
 
@@ -43,12 +44,15 @@ export default class App extends Component {
               <Grid item xs={1}>
                   <Navigation currentPage={this.state.currentPage} setActive={this.setActive}/>
               </Grid>
-              <Grid item xs={11}>
+              <Grid item xs={10}>
                   <Route exact path={ROUTES.HOME} component={HomePage}/>
                   <Route exact path={ROUTES.MUSIC} component={MusicPage}/>
                   <Route exact path={ROUTES.VISUALS} component={VisualsPage}/>
                   <Route exact path={ROUTES.PROJECTS} component={ProjectsPage}/>
                   <Route exact path={ROUTES.CONTACT} component={ContactPage}/>
+              </Grid>
+              <Grid item xs={1}>
+                  <SocialLinks/>
               </Grid>
             </Grid>
 

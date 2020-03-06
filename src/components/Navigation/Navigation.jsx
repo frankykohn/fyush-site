@@ -21,8 +21,8 @@ function LinkButton({label, to})
   );
 }
 const Navigation = (props) => (
-    <Grid container spacing={1}>
-      <Grid item xs={12}>
+    <Grid container spacing={1} style={{textAlign: 'left'}}>
+      <Grid item xs={12} >
         <LinkButton label={'home'} to={ROUTES.HOME}/>
       </Grid>
       <Grid item xs={12}>
@@ -38,5 +38,6 @@ const Navigation = (props) => (
         <LinkButton label={'contact'} to={ROUTES.CONTACT}/>
       </Grid>
     </Grid>
+
 );
 export default Navigation;
