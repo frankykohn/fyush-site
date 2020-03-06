@@ -6,20 +6,33 @@ import { makeStyles } from '@material-ui/core/styles';
 import * as ROUTES from '../../constants/routes';
 
 const Navigation = () => (
-  <div>
-    <Grid container spacing={3}>
-      <Grid item xs={3}>
-        <Link to={ROUTES.HOME}>
+    <Grid container spacing={0}>
+      <Grid item xs={12}>
+        <Link
+          to={ROUTES.HOME}>
             <Button>home</Button>
         </Link>
-        <Link to={ROUTES.MUSIC} className="">
+      </Grid>
+      <Grid item xs={12}>
+        <Link to={ROUTES.MUSIC}>
             <Button>music</Button>
         </Link>
+      </Grid>
+      <Grid item xs={12}>
         <Link to={ROUTES.VISUALS}>
             <Button>visuals</Button>
         </Link>
       </Grid>
+      <Grid item xs={12}>
+        <Link to={ROUTES.PROJECTS}>
+            <Button>projects</Button>
+        </Link>
+      </Grid>
+      <Grid item xs={12}>
+        <Link to={ROUTES.CONTACT}>
+            <Button>contact</Button>
+        </Link>
+      </Grid>
     </Grid>
-  </div>
 );
 export default Navigation;

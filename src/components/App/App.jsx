@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
 
 import {
@@ -6,26 +6,42 @@ import {
   Route,
 } from 'react-router-dom';
 
+import {
+  Grid
+} from '@material-ui/core';
+
 import HomePage from '../HomePage/HomePage';
 import MusicPage from '../MusicPage/MusicPage';
 import VisualsPage from '../VisualsPage/VisualsPage';
+import ContactPage from '../ContactPage/ContactPage';
+import ProjectsPage from '../ProjectsPage/ProjectsPage';
 import Navigation from '../Navigation/Navigation';
 
 import * as ROUTES from '../../constants/routes';
 
-function App() {
-  return (
-    <div className="App">
-        <Router>
-            <Navigation/>
+export default class App extends Component {
 
-            <Route exact path={ROUTES.HOME} component={HomePage}/>
-            <Route exact path={ROUTES.MUSIC} component={MusicPage}/>
-            <Route exact path={ROUTES.VISUALS} component={VisualsPage}/>
-        </Router>
+  render()
+  {
+    return (
+      <div className="App">
+          <Router>
+            <Grid container>
+              <Grid item xs={1}>
+                  <Navigation/>
+              </Grid>
+              <Grid item xs={11}>
+                  <Route exact path={ROUTES.HOME} component={HomePage}/>
+                  <Route exact path={ROUTES.MUSIC} component={MusicPage}/>
+                  <Route exact path={ROUTES.VISUALS} component={VisualsPage}/>
+                  <Route exact path={ROUTES.PROJECTS} component={ProjectsPage}/>
+                  <Route exact path={ROUTES.CONTACT} component={ContactPage}/>
+              </Grid>
+            </Grid>
 
-    </div>
-  );
+          </Router>
+
+      </div>
+    );
+  }
 }
-
-export default App;

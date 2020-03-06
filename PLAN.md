@@ -1,4 +1,7 @@
 App
-  - Home
-  - Visuals
-  - Music
+  - home
+  - visuals
+  - music
+  - projects
+  - about
+  - contact

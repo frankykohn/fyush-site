@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 
-class HomePage extends Component
+export default class HomePage extends Component
 {
     constructor(props)
     {
@@ -15,5 +15,3 @@ class HomePage extends Component
         )
     }
 }
-
-export default HomePage;

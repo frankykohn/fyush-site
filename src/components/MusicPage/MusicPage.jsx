@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 
-class MusicPage extends Component
+export default class MusicPage extends Component
 {
     constructor(props)
     {
@@ -11,9 +11,9 @@ class MusicPage extends Component
     render()
     {
         return (
-          <div>MUSIC</div>
+          <div>
+            MUSIC
+          </div>
         )
     }
 }
-
-export default MusicPage;

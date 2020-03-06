@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 
-export default class VisualsPage extends Component
+export default class ContactPage extends Component
 {
     constructor(props)
     {
@@ -11,7 +11,7 @@ export default class VisualsPage extends Component
     render()
     {
         return (
-          <div>visuals</div>
+          <div>contact</div>
         )
     }
 }
