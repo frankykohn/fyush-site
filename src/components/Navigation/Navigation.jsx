@@ -1,37 +1,41 @@
 import React from 'react';
 import { Grid, Button } from '@material-ui/core';
-import { Link } from 'react-router-dom';
+import { Link, useRouteMatch } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
+
+import './Navigation.css';
 
 import * as ROUTES from '../../constants/routes';
 
-const Navigation = () => (
-    <Grid container spacing={0}>
+function LinkButton({label, to})
+{
+  let match = useRouteMatch({
+    path: to,
+    exact: true
+  });
+
+  return (
+      <Link to={to}>
+          <Button className={match ? 'activeButton' : 'inactiveButton'}>{label}</Button>
+      </Link>
+  );
+}
+const Navigation = (props) => (
+    <Grid container spacing={1}>
       <Grid item xs={12}>
-        <Link
-          to={ROUTES.HOME}>
-            <Button>home</Button>
-        </Link>
+        <LinkButton label={'home'} to={ROUTES.HOME}/>
       </Grid>
       <Grid item xs={12}>
-        <Link to={ROUTES.MUSIC}>
-            <Button>music</Button>
-        </Link>
+        <LinkButton label={'music'} to={ROUTES.MUSIC}/>
       </Grid>
       <Grid item xs={12}>
-        <Link to={ROUTES.VISUALS}>
-            <Button>visuals</Button>
-        </Link>
+        <LinkButton label={'visuals'} to={ROUTES.VISUALS}/>
       </Grid>
       <Grid item xs={12}>
-        <Link to={ROUTES.PROJECTS}>
-            <Button>projects</Button>
-        </Link>
+        <LinkButton label={'projects'} to={ROUTES.PROJECTS}/>
       </Grid>
       <Grid item xs={12}>
-        <Link to={ROUTES.CONTACT}>
-            <Button>contact</Button>
-        </Link>
+        <LinkButton label={'contact'} to={ROUTES.CONTACT}/>
       </Grid>
     </Grid>
 );

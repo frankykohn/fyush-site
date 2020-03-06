@@ -21,6 +21,19 @@ import * as ROUTES from '../../constants/routes';
 
 export default class App extends Component {
 
+  constructor(props)
+  {
+    super(props);
+    this.state = {
+        currentPage: 'home'
+    };
+  }
+
+  setActive = (page) =>
+  {
+      this.setState({ currentPage: page});
+  }
+
   render()
   {
     return (
@@ -28,7 +41,7 @@ export default class App extends Component {
           <Router>
             <Grid container>
               <Grid item xs={1}>
-                  <Navigation/>
+                  <Navigation currentPage={this.state.currentPage} setActive={this.setActive}/>
               </Grid>
               <Grid item xs={11}>
                   <Route exact path={ROUTES.HOME} component={HomePage}/>
