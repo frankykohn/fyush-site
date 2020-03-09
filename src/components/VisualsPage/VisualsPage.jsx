@@ -11,7 +11,8 @@ export default class VisualsPage extends Component
     render()
     {
         return (
-          <div>visuals</div>
+          <div>
+          </div>
         )
     }
 }

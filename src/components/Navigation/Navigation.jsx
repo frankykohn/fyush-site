@@ -21,9 +21,9 @@ function LinkButton({label, to})
   );
 }
 const Navigation = (props) => (
-    <Grid container spacing={1} style={{textAlign: 'left'}}>
+    <Grid container spacing={1} style={{textAlign: 'center'}}>
       <Grid item xs={12} >
-        <LinkButton label={'home'} to={ROUTES.HOME}/>
+        <LinkButton label={'me'} to={ROUTES.HOME}/>
       </Grid>
       <Grid item xs={12}>
         <LinkButton label={'music'} to={ROUTES.MUSIC}/>
@@ -32,7 +32,7 @@ const Navigation = (props) => (
         <LinkButton label={'visuals'} to={ROUTES.VISUALS}/>
       </Grid>
       <Grid item xs={12}>
-        <LinkButton label={'projects'} to={ROUTES.PROJECTS}/>
+        <LinkButton label={'max'} to={ROUTES.MAX}/>
       </Grid>
       <Grid item xs={12}>
         <LinkButton label={'contact'} to={ROUTES.CONTACT}/>

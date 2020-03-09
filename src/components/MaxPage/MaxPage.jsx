@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 
+import { Grid } from '@material-ui/core';
 
-export default class ProjectsPage extends Component
+
+
+export default class MaxPage extends Component
 {
     constructor(props)
     {
@@ -11,7 +14,8 @@ export default class ProjectsPage extends Component
     render()
     {
         return (
-          <div>projects</div>
+          <Grid container spacing={0}>
+          </Grid>
         )
     }
 }

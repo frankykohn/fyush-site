@@ -14,7 +14,7 @@ import HomePage from '../HomePage/HomePage';
 import MusicPage from '../MusicPage/MusicPage';
 import VisualsPage from '../VisualsPage/VisualsPage';
 import ContactPage from '../ContactPage/ContactPage';
-import ProjectsPage from '../ProjectsPage/ProjectsPage';
+import MaxPage from '../MaxPage/MaxPage';
 import Navigation from '../Navigation/Navigation';
 import SocialLinks from '../SocialLinks/SocialLinks';
 
@@ -26,38 +26,37 @@ export default class App extends Component {
   {
     super(props);
     this.state = {
-        currentPage: 'home'
+        currentPage: 'home',
+        bgColor: '#ffffff'
     };
   }
 
-  setActive = (page) =>
+  setColor = () =>
   {
-      this.setState({ currentPage: page});
+      this.setState({ bgColor: '#000000'});
   }
 
   render()
   {
     return (
-      <div className="App">
+      <div className="App" style={{backgroundColor: this.state.bgColor}}>
           <Router>
-            <Grid container>
-              <Grid item xs={1}>
-                  <Navigation currentPage={this.state.currentPage} setActive={this.setActive}/>
+            <Grid container spacing={0}>
+              <Grid item xs={12} sm={1}>
+                  <Navigation currentPage={this.state.currentPage} setColor={this.setColor}/>
               </Grid>
-              <Grid item xs={10}>
+              <Grid item xs={12} sm={10}>
                   <Route exact path={ROUTES.HOME} component={HomePage}/>
                   <Route exact path={ROUTES.MUSIC} component={MusicPage}/>
                   <Route exact path={ROUTES.VISUALS} component={VisualsPage}/>
-                  <Route exact path={ROUTES.PROJECTS} component={ProjectsPage}/>
+                  <Route exact path={ROUTES.MAX} component={MaxPage}/>
                   <Route exact path={ROUTES.CONTACT} component={ContactPage}/>
               </Grid>
-              <Grid item xs={1}>
+              <Grid item xs={12} sm={1}>
                   <SocialLinks/>
               </Grid>
             </Grid>
-
           </Router>
-
       </div>
     );
   }
