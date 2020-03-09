@@ -26,7 +26,7 @@ export default class App extends Component {
   {
     super(props);
     this.state = {
-        currentPage: 'home',
+        currentPage: 'Home',
         bgColor: '#ffffff'
     };
   }
@@ -42,7 +42,12 @@ export default class App extends Component {
       <div className="App" style={{backgroundColor: this.state.bgColor}}>
           <Router>
             <Grid container spacing={0}>
-              <Grid item xs={12} sm={1}>
+              <Grid item xs={12}>
+                  <h1>Title</h1>
+              </Grid>
+            </Grid>
+            <Grid container spacing={0}>
+              <Grid className="sidebar" item xs={12} sm={1}>
                   <Navigation currentPage={this.state.currentPage} setColor={this.setColor}/>
               </Grid>
               <Grid item xs={12} sm={10}>

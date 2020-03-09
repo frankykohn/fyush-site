@@ -21,7 +21,7 @@ function LinkButton({label, to})
   );
 }
 const Navigation = (props) => (
-    <Grid container spacing={1} style={{textAlign: 'center'}}>
+    <Grid className="navContainer" container spacing={1}>
       <Grid item xs={12} >
         <LinkButton label={'me'} to={ROUTES.HOME}/>
       </Grid>
