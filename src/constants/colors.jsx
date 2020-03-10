@@ -1,35 +1,35 @@
 // blue
-export const HOME = {
+export const BLUE = {
     BODY: '#ACE7FF',
     BORDER: '#85E3FF'
 }
 
 // alt blue
-export const BLUE = {
+export const LIGHTBLUE = {
     BODY: '#AFCBFF',
     BORDER: '#6EB5FF'
 }
 
 // green
-export const MUSIC = {
+export const GREEN = {
     BODY: '#C4FAF8',
     BORDER: '#BFFCC6'
 }
 
 // purple
-export const VISUALS = {
+export const PURPLE = {
     BODY: '#DCD3FF',
     BORDER: 'D5AAFF'
 }
 
 // pink
-export const MAX = {
+export const PINK = {
     BODY: '#FFCCF9',
     BORDER: '#F6A6FF'
 }
 
 // salmon
-export const CONTACT = {
+export const SALMON = {
     BODY: '#FFABAB',
     BORDER: '#FFBEBC'
 }

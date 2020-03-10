@@ -22,10 +22,10 @@ export default class HomePage extends Component
                 </Grid>
               </Grid>
               <Grid container item xs={12} spacing={1}>
-                  <Grid item xs={4}>
+                  <Grid item xs={12} sm={6}>
                       <img className="cover-image"src="https://firebasestorage.googleapis.com/v0/b/fyush-site.appspot.com/o/home%2Fwebsite-cover-photo.jpeg?alt=media&token=4dae72b7-8c49-4893-b89e-640daa1c183c"></img>
                   </Grid>
-                  <Grid item xs={8}>
+                  <Grid item xs={12} sm={6}>
                       <p>
                           Hello! I am a software engineer, musician, producer, and sound designer based in Oakland, CA.
                           My software work focuses on front-end and full-stack web development, audio plugins and DAW software.

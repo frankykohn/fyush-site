@@ -11,7 +11,7 @@ export default class ContactPage extends Component
     render()
     {
         return (
-          <div>contact</div>
+          <h1>Contact</h1>
         )
     }
 }
