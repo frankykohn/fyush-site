@@ -1,7 +1,7 @@
 // blue
 export const BLUE = {
     BODY: '#ACE7FF',
-    BORDER: '#85E3FF'
+    BORDER: '#3386de'
 }
 
 // alt blue

@@ -1,3 +1,51 @@
 .cover-image {
-    width: 100%
+}
+
+.react-icons {
+  vertical-align: 'bottom' !important;
+}
+
+.main-card {
+  -webkit-box-shadow: 25px 20px 28px -14px rgba(0,0,0,1) !important;
+  -moz-box-shadow: 25px 20px 28px -14px rgba(0,0,0,1) !important;
+  box-shadow: 25px 20px 28px -14px rgba(0,0,0,1) !important;
+}
+
+.card-content {
+  text-align: center;
+}
+
+.card-content-info {
+  flex-grow: 5 !important;
+}
+.card-content-info p {
+  margin: 5px !important;
+  text-align: left;
+}
+
+.edu-exp-container {
+    text-align: left !important;
+}
+
+.edu-exp-header {
+    text-decoration: underline;
+}
+
+.edu-exp-title {
+    margin: 0px;
+}
+
+.edu-exp-company {
+    margin: 0px;
+}
+.edu-exp-org {
+    margin: 0px;
+}
+
+.edu-exp-dates {
+
+}
+
+.edu-exp-about {
+
 }

@@ -1,13 +1,25 @@
 .active-button {
     box-shadow: 10px 10px 10px;
+    border-bottom: 5px solid white !important;
 }
+
+.active-button
 
 .inactive-button {
 }
 
 .nav-button {
-  
+  margin: 10px;
+}
+
+.nav-button span {
+  color: white;
 }
 
 .navContainer {
+}
+
+.title {
+    flex-grow: 1;
+    text-align: left;
 }
