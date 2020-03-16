@@ -13,6 +13,7 @@ export default class MusicPage extends Component
     constructor(props)
     {
         super(props);
+        props.setColor();
     }
 
     render()

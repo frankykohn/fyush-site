@@ -5,7 +5,7 @@ import {
   Card,
   CardContent,
   CardMedia,
-  IconButton
+  IconButton, Button
  } from '@material-ui/core';
 
  import {
@@ -13,7 +13,8 @@ import {
    FaCity,
    FaGithub,
    FaInstagram,
-   FaLinkedin
+   FaLinkedin,
+   FaCalendarAlt
  } from "react-icons/fa";
 
 
@@ -21,23 +22,44 @@ import {
    FiPhone
  } from 'react-icons/fi';
 
+ import { GoNote } from "react-icons/go";
+
 import './HomePage.css'
-import * as PAGES from '../../constants/pages';
+import { HOME } from '../../constants/pages';
 
 
 const CardSocialLinks = ({iconSize}) => (
-    <Grid container justify="center" style={{backgroundColor: PAGES.HOME.COLOR.BORDER}}>
+    <Grid container justify="center" style={{backgroundColor: HOME.COLOR.BORDER}}>
       <Grid item>
-          <IconButton><FaGithub size={iconSize} color="white"/></IconButton>
+          <IconButton href="https://github.com/frankykohn/"><FaGithub size={iconSize} color="white"/></IconButton>
       </Grid>
       <Grid item>
-          <IconButton><FaInstagram size={iconSize} color="white"/></IconButton>
+          <IconButton href="https://www.instagram.com/earring_loss/"><FaInstagram size={iconSize} color="white"/></IconButton>
       </Grid>
       <Grid item>
-          <IconButton><FaLinkedin size={iconSize} color="white"/></IconButton>
+          <IconButton href="https://www.linkedin.com/in/frankykohn/"><FaLinkedin size={iconSize} color="white"/></IconButton>
+      </Grid>
+      <Grid item>
+          <IconButton href="https://firebasestorage.googleapis.com/v0/b/fyush-site.appspot.com/o/home%2FResume%203.pdf?alt=media&token=63b18718-c760-486d-95dc-b3ecea4760ba"><GoNote size={iconSize} color="white"/></IconButton>
       </Grid>
     </Grid>
 );
+
+function Specialties() {
+    return (
+      <Card className="card-shadow">
+          <Grid item container xs={12} className="resume-container">
+            <Grid item xs={12}>
+                <h1 className="resume-header">Specialties</h1>
+                <hr color='black'/>
+                <p className="resume-about">
+                    Laravel, PHP, React, Javascript, C++, Audio DSP, JUCE, Audio Mixing, Music Production, Music Composition.
+                </p>
+            </Grid>
+          </Grid>
+      </Card>
+    );
+}
 
 function Experience() {
     const experienceArray = [
@@ -52,48 +74,54 @@ function Experience() {
     const experienceLines = [];
     experienceArray.forEach((experience, index) => {
       experienceLines.push(
-        <div key="index" className="edu-exp-container">
+        <div key="index">
           <Grid item xs={12}>
-              <p className="edu-exp-title">{experience.title}</p>
+              <h3 className="resume-title">{experience.title}</h3>
           </Grid>
           <Grid item xs={12}>
-              <p className="edu-exp-org">{experience.company}</p>
+              <p className="resume-org">{experience.company}</p>
           </Grid>
           <Grid item xs={12}>
-              <p className="edu-exp-dates">{experience.start} - {experience.end}</p>
+              <p className="resume-dates"><FaCalendarAlt/> {experience.start} - {experience.end}</p>
           </Grid>
           <Grid item xs={12}>
-            <p className="edu-exp-about">{experience.about}</p>
+            <p className="resume-about">{experience.about}</p>
           </Grid>
         </div>
       );
     });
     return (
-      <div>
-          <Grid item xs={12}>
-              <h1 className="edu-exp-header">Experience</h1>
+      <Card className="card-shadow">
+          <Grid item container xs={12} className="resume-container">
+              <Grid item xs={12}>
+                  <h1 className="resume-header">Experience</h1>
+                  <hr color='black'/>
+              </Grid>
+              {experienceLines}
           </Grid>
-          {experienceLines}
-      </div>
+      </Card>
     )
 }
 
 function Education() {
     return (
-      <div className="edu-exp-container">
-        <Grid item xs={12}>
-            <h1 className="edu-exp-header">Education</h1>
+        <Card className="card-shadow">
+          <Grid item container className="resume-container">
+            <Grid item xs={12}>
+              <h1 className="resume-header">Education</h1>
+              <hr color='black'/>
+            </Grid>
+            <Grid item xs={12}>
+              <p className="resume-title">B.S. Computer Science, Electronic Music Minor</p>
+            </Grid>
+            <Grid item xs={12}>
+              <p className="resume-org">University of California, Santa Cruz</p>
+            </Grid>
+            <Grid item xs={12}>
+              <p className="resume-dates"><FaCalendarAlt/> September 2015 - June 2019</p>
+            </Grid>
         </Grid>
-        <Grid item xs={12}>
-            <p className="edu-exp-title">B.S. Computer Science, Electronic Music Minor</p>
-        </Grid>
-        <Grid item xs={12}>
-            <p className="edu-exp-org">University of California, Santa Cruz</p>
-        </Grid>
-        <Grid item xs={12}>
-            <p className="edu-exp-dates">September 2015 - June 2019</p>
-        </Grid>
-      </div>
+      </Card>
 
     )
 }
@@ -104,6 +132,7 @@ export default class HomePage extends Component
     {
       super(props);
       this.cardLines = [];
+      props.setColor();
       this.createCardInfo();
     }
 
@@ -137,15 +166,15 @@ export default class HomePage extends Component
     {
 
         return (
-          <div>
+          <div className="main-container">
             <Grid container justify="center" spacing={5}>
               <Grid item xs={10}>
-                <Card className="main-card">
+                <Card className="card-shadow">
                     <Grid container spacing={0}>
-                        <Grid item xs={12} md={5}>
+                        <Grid item xs={12} md={4}>
                           <img className="cover-image" width="100%" alt="Franky Kohn" src="https://firebasestorage.googleapis.com/v0/b/fyush-site.appspot.com/o/home%2Fwebsite-cover-photo.jpeg?alt=media&token=4dae72b7-8c49-4893-b89e-640daa1c183c"></img>
                         </Grid>
-                        <Grid className="card-content" item xs={12} md={7} style={{display: 'flex', flexDirection: 'column'}}>
+                        <Grid className="card-content" item xs={12} md={8} style={{display: 'flex', flexDirection: 'column'}}>
                           <div>
                             <h1>Franky Kohn</h1>
                             <h2>Software Engineer, Sound Designer, Musician</h2>
@@ -153,39 +182,30 @@ export default class HomePage extends Component
                           <div className="card-content-info">
                               {this.cardLines}
                           </div>
+
                           <CardSocialLinks iconSize="30px"/>
                         </Grid>
                     </Grid>
                 </Card>
               </Grid>
               </Grid>
-              {/* Specialties */}
-              <Grid container spacing={1}>
-                  <Grid item xs={12}>
-                      <h2>Specialties</h2>
-                  </Grid>
-                  <Grid item container>
-                  </Grid>
-              </Grid>
 
-              {/* Experience & Education */}
-              <Grid container spacing={1} justify="center">
+              <Grid container spacing={5} justify="center">
                   <Grid item container xs={10} md={5}>
                       <Experience/>
                   </Grid>
                   <Grid item container xs={10} md={5}>
+                      <Specialties/>
                       <Education/>
                   </Grid>
               </Grid>
-
-
 
               <Grid container item xs={12} spacing={1}>
                   <p>
                       This site was built from scratch using <a href="https://reactjs.org/">React</a> for the front-end, <a href="https://material-ui.com/">Material-UI</a> as a basis for css styling, and <a href="https://firebase.google.com/">Firebase</a> for hosting, cloud storage, and database.
                   </p>
               </Grid>
-              </div>
+          </div>
         )
     }
 }

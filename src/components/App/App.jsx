@@ -26,34 +26,79 @@ class App extends Component {
   constructor(props)
   {
     super(props);
+    let primaryColor = '';
+    let secondaryColor = '';
+    switch(props.location.pathname)
+    {
+        case PAGES.MUSIC.ROUTE:
+          primaryColor = PAGES.MUSIC.COLOR.BORDER;
+          secondaryColor = PAGES.MUSIC.COLOR.BODY;
+          break;
+        case PAGES.VISUALS.ROUTE:
+          primaryColor = PAGES.VISUALS.COLOR.BORDER;
+          secondaryColor = PAGES.VISUALS.COLOR.BODY;
+          break;
+        // home
+        default:
+          primaryColor = PAGES.HOME.COLOR.BORDER;
+          secondaryColor = PAGES.HOME.COLOR.BODY;
+          break;
+    }
     this.state = {
-        currentPage: 'home',
-        primaryColor: PAGES.HOME.COLOR.BORDER,
-        secondaryColor: PAGES.HOME.COLOR.BODY,
+        primaryColor: primaryColor,
+        secondaryColor: secondaryColor,
     };
   }
 
   setColor = () =>
   {
-      this.setState({ bgColor: '#000000'});
+    let primaryColor = '';
+    let secondaryColor = '';
+    switch(this.props.location.pathname)
+    {
+        case PAGES.MUSIC.ROUTE:
+          primaryColor = PAGES.MUSIC.COLOR.BORDER;
+          secondaryColor = PAGES.MUSIC.COLOR.BODY;
+          break;
+        case PAGES.VISUALS.ROUTE:
+          primaryColor = PAGES.VISUALS.COLOR.BORDER;
+          secondaryColor = PAGES.VISUALS.COLOR.BODY;
+          break;
+        // home
+        default:
+          primaryColor = PAGES.HOME.COLOR.BORDER;
+          secondaryColor = PAGES.HOME.COLOR.BODY;
+          break;
+    }
+    this.setState({
+        primaryColor: primaryColor,
+        secondaryColor: secondaryColor
+    });
   }
 
   render()
   {
     return (
-      <div className="App" style={{background: `linear-gradient(150deg, ${this.state.primaryColor} 40%, ${this.state.secondaryColor} 30% 100%)`}}>
+      <div className="App" style={{transition: '0.5s', background: `linear-gradient(160deg, ${this.state.primaryColor} 40%, ${this.state.secondaryColor} 30% 100%)`}}>
         <CssBaseline/>
             <Navigation currentPage={this.state.currentPage} setColor={this.setColor}/>
             <Grid className="body-container" container spacing={3}>
               <Grid item xs={12}>
-                  <Route exact path={PAGES.HOME.ROUTE} component={HomePage}/>
-                  <Route exact path={PAGES.MUSIC.ROUTE} component={MusicPage}/>
-                  <Route exact path={PAGES.VISUALS.ROUTE} component={VisualsPage}/>
-                  <Route exact path={PAGES.MAX.ROUTE} component={MaxPage}/>
-                  <Route exact path={PAGES.CONTACT.ROUTE} component={ContactPage}/>
+                  <Route exact path={PAGES.HOME.ROUTE}>
+                      <HomePage setColor={this.setColor}/>
+                  </Route>
+                  <Route exact path={PAGES.MUSIC.ROUTE}>
+                      <MusicPage setColor={this.setColor}/>
+                  </Route>
+                  <Route exact path={PAGES.VISUALS.ROUTE}>
+                      <VisualsPage setColor={this.setColor}/>
+                  </Route>
+                  <Route exact path={PAGES.MAX.ROUTE}>
+                      <MaxPage setColor={this.setColor}/>
+                  </Route>
               </Grid>
               <Grid item xs={12}>
-                <Footer/>
+                <Footer color={this.state.primaryColor}/>
               </Grid>
             </Grid>
       </div>

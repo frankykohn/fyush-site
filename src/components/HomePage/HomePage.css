@@ -1,14 +1,17 @@
 .cover-image {
+  height: 100%;
 }
 
 .react-icons {
   vertical-align: 'bottom' !important;
 }
 
-.main-card {
-  -webkit-box-shadow: 25px 20px 28px -14px rgba(0,0,0,1) !important;
-  -moz-box-shadow: 25px 20px 28px -14px rgba(0,0,0,1) !important;
-  box-shadow: 25px 20px 28px -14px rgba(0,0,0,1) !important;
+.card-shadow {
+  -webkit-box-shadow: 25px 20px 28px -14px #000000!important;
+  -moz-box-shadow: 25px 20px 28px -14px #000000 !important;
+  box-shadow: 25px 20px 28px -14px #000000 !important;
+  margin-top: 40px;
+  margin-bottom: 0px;
 }
 
 .card-content {
@@ -23,29 +26,33 @@
   text-align: left;
 }
 
-.edu-exp-container {
+.resume-container {
     text-align: left !important;
+    padding: 10px;
 }
 
-.edu-exp-header {
-    text-decoration: underline;
+.resume-header {
+    margin-bottom: 0px;
 }
 
-.edu-exp-title {
+.resume-title {
     margin: 0px;
 }
 
-.edu-exp-company {
+.resume-company {
     margin: 0px;
+
 }
-.edu-exp-org {
+
+.resume-org {
     margin: 0px;
+    color: #3386de;
 }
 
-.edu-exp-dates {
+.resume-dates {
 
 }
 
-.edu-exp-about {
+.resume-about {
 
 }
