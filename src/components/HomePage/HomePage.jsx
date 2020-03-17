@@ -5,7 +5,8 @@ import {
   Card,
   CardContent,
   CardMedia,
-  IconButton, Button
+  IconButton, Button,
+  Paper
  } from '@material-ui/core';
 
  import {
@@ -46,18 +47,63 @@ const CardSocialLinks = ({iconSize}) => (
 );
 
 function Specialties() {
+    const skills = [
+      'Front-End Software',
+      'Full-Stack Software',
+      'Audio DSP',
+      'Audio Mixing',
+      'Music Production',
+      'Music Composition',
+      'Music Performance'
+    ];
+    let skillsDisplay = [];
+    skills.forEach((skill, index) => {
+      skillsDisplay.push(
+        <span className="spec-item" key={index}>{skill}</span>
+      )
+    });
+
+    const specialization = [
+      'PHP',
+      'React',
+      'Javascript',
+      'C++',
+      'JUCE',
+      'Ableton Live',
+      'Logic Pro'
+    ];
+    let specializationDisplay = [];
+    specialization.forEach((skill, index) => {
+      specializationDisplay.push(
+        <span className="spec-item" key={index}>{skill}</span>
+      )
+    });
     return (
-      <Card className="card-shadow">
-          <Grid item container xs={12} className="resume-container">
-            <Grid item xs={12}>
-                <h1 className="resume-header">Specialties</h1>
-                <hr color='black'/>
-                <p className="resume-about">
-                    Laravel, PHP, React, Javascript, C++, Audio DSP, JUCE, Audio Mixing, Music Production, Music Composition.
-                </p>
+      <div>
+        <Card className="card-shadow">
+            <Grid item container xs={12} className="resume-container">
+              <Grid item xs={12}>
+                  <h1 className="resume-header">Skills</h1>
+                  <hr color='black'/>
+                  <p className="resume-about">
+                      {skillsDisplay}
+                  </p>
+              </Grid>
             </Grid>
-          </Grid>
-      </Card>
+        </Card>
+        <Card className="card-shadow">
+            <Grid item container xs={12} className="resume-container">
+              <Grid item xs={12}>
+                  <h1 className="resume-header">Specialization</h1>
+                  <hr color='black'/>
+                  <p className="resume-about">
+                      {specializationDisplay}
+                  </p>
+              </Grid>
+            </Grid>
+        </Card>
+      </div>
+
     );
 }
 
@@ -69,14 +115,28 @@ function Experience() {
         start: 'March 2018',
         end: 'Present',
         about: 'Full-stack web development PHP with Laravel, Vue, PostgreSQL, Javascript and HTML R&D to develop tools for automation and language processing'
+      },
+      {
+        title: 'Stage Hand',
+        company: 'Monterey Jazz Festival',
+        start: 'September 2018',
+        end: 'Present',
+        about: "Reading stage plots to set up and tear down between acts and curating the visitor's experience"
+      },
+      {
+        title: 'A&R Intern',
+        company: 'Concord Bicycle Music',
+        start: 'June 2016',
+        end: 'September 2016',
+        about: 'Organizing and augmenting catalog data and assisting the head of A&R with artist correspondence.'
       }
     ]
     const experienceLines = [];
     experienceArray.forEach((experience, index) => {
       experienceLines.push(
-        <div key="index">
+        <div key="index" style={{padding: '20px 0px'}}>
           <Grid item xs={12}>
-              <h3 className="resume-title">{experience.title}</h3>
+             <p className="resume-title">{experience.title}</p>
           </Grid>
           <Grid item xs={12}>
               <p className="resume-org">{experience.company}</p>
@@ -85,7 +145,7 @@ function Experience() {
               <p className="resume-dates"><FaCalendarAlt/> {experience.start} - {experience.end}</p>
           </Grid>
           <Grid item xs={12}>
-            <p className="resume-about">{experience.about}</p>
+              <p className="resume-about">{experience.about}</p>
           </Grid>
         </div>
       );
@@ -175,10 +235,9 @@ export default class HomePage extends Component
                           <img className="cover-image" width="100%" alt="Franky Kohn" src="https://firebasestorage.googleapis.com/v0/b/fyush-site.appspot.com/o/home%2Fwebsite-cover-photo.jpeg?alt=media&token=4dae72b7-8c49-4893-b89e-640daa1c183c"></img>
                         </Grid>
                         <Grid className="card-content" item xs={12} md={8} style={{display: 'flex', flexDirection: 'column'}}>
-                          <div>
-                            <h1>Franky Kohn</h1>
-                            <h2>Software Engineer, Sound Designer, Musician</h2>
-                          </div>
+                            <h1 className="card-title">Franky Kohn</h1>
+                            <h2 className="resume-title">Software Engineer, Sound Designer, Musician</h2>
+                          <hr width='80%' style={{marginTop: '15px'}}/>
                           <div className="card-content-info">
                               {this.cardLines}
                           </div>
@@ -192,18 +251,20 @@ export default class HomePage extends Component
 
               <Grid container spacing={5} justify="center">
                   <Grid item container xs={10} md={5}>
-                      <Experience/>
+                        <Specialties/>
+                        <Education/>
                   </Grid>
                   <Grid item container xs={10} md={5}>
-                      <Specialties/>
-                      <Education/>
+                      <Experience/>
                   </Grid>
               </Grid>
+              <Grid container spacing={2} justify="center">
+                  <Grid item xs={10}>
 
-              <Grid container item xs={12} spacing={1}>
-                  <p>
-                      This site was built from scratch using <a href="https://reactjs.org/">React</a> for the front-end, <a href="https://material-ui.com/">Material-UI</a> as a basis for css styling, and <a href="https://firebase.google.com/">Firebase</a> for hosting, cloud storage, and database.
-                  </p>
+                    <p style={{color: 'grey'}}>
+                        This site was built from scratch using <a href="https://reactjs.org/">React</a> for the front-end, <a href="https://material-ui.com/">Material-UI</a> as a basis for css styling, and <a href="https://firebase.google.com/">Firebase</a> for hosting, cloud storage, and database.
+                    </p>
+                  </Grid>
               </Grid>
           </div>
         )

@@ -17,8 +17,12 @@
 .card-content {
   text-align: center;
 }
+.card-title {
+  margin: 20px;
+}
 
 .card-content-info {
+  margin-top: 20px;
   flex-grow: 5 !important;
 }
 .card-content-info p {
@@ -37,11 +41,12 @@
 
 .resume-title {
     margin: 0px;
+    font-weight: 700;
+    font-size: 24px;
 }
 
 .resume-company {
     margin: 0px;
-
 }
 
 .resume-org {
@@ -50,9 +55,20 @@
 }
 
 .resume-dates {
-
+    margin: 0px;
+    font-size: 16px;
+    color: grey;
 }
 
 .resume-about {
+  margin: 0px;
+  font-size: 16px;
+}
 
+.spec-item {
+  background-color: #3386de;
+  padding: 2px;
+  border-radius: 5px;
+  margin: 5px 2px;
+  color: white;
 }

@@ -14,7 +14,7 @@ import * as PAGES from '../../constants/pages';
 function LinkButton({label, to})
 {
   return (
-      <NavLink exact activeClassName='active-button' style={{padding: '10px'}} to={to}>
+      <NavLink exact className="nav-link" activeClassName='active-button' style={{padding: '10px'}} to={to}>
           <Button className={'nav-button'}>{label}</Button>
       </NavLink>
   );

@@ -2,25 +2,30 @@ import * as COLORS from './colors';
 
 export const HOME = {
     ROUTE: '/',
-    COLOR: COLORS.BLUE
+    COLOR: COLORS.BLUE,
+    ANGLE: '160deg'
 }
 
 export const MUSIC = {
     ROUTE: '/music',
-    COLOR: COLORS.LIGHTBLUE
+    COLOR: COLORS.PURPLE,
+    ANGLE: '160deg'
 }
 
 export const VISUALS = {
     ROUTE: '/visuals',
-    COLOR: COLORS.GREEN
+    COLOR: COLORS.GREEN,
+    ANGLE: '160deg'
 };
 
 export const MAX = {
     ROUTE: '/projects',
-    COLOR: COLORS.PURPLE
+    COLOR: COLORS.PURPLE,
+    ANGLE: '160deg'
 };
 
 export const CONTACT = {
     ROUTE: '/contact',
-    COLOR: COLORS.PINK
+    COLOR: COLORS.PINK,
+    ANGLE: '160deg'
 };

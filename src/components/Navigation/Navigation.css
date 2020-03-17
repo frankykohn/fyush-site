@@ -8,8 +8,13 @@
 .inactive-button {
 }
 
+.nav-link {
+  text-decoration: none;
+}
 .nav-button {
   margin: 10px;
+
+
 }
 
 .nav-button span {

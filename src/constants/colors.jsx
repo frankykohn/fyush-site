@@ -18,8 +18,8 @@ export const GREEN = {
 
 // purple
 export const PURPLE = {
-    BODY: '#DCD3FF',
-    BORDER: 'D5AAFF'
+    BODY: '#FEC8D8',
+    BORDER: '#D291BC',
 }
 
 // pink
