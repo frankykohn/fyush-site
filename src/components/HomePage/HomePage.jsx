@@ -200,7 +200,6 @@ export default class HomePage extends Component
     {
       const cardInfo = [
         { icon: <FaRegEnvelope/>, content: 'franky.kohn@gmail.com' },
-        { icon: <FiPhone/>, content: '(310) 697-6593' },
         { icon: <FaCity/>, content: 'Oakland, CA'}
       ];
       cardInfo.forEach((item, index) => {
